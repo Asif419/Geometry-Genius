@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius</title>
+</head>
+
+<!-- fontawesome -->
+<script src="https://kit.fontawesome.com/b05eb4462a.js" crossorigin="anonymous"></script>
+
+<!-- tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- my css -->
+<link rel="stylesheet" href="styles/styles.css">
+
+<body class="font-sans">
+    <!-- header start -->
+    <header class="m-2 md:m-7 p-4 bg-sky-100 rounded flex justify-between items-center">
+        <div id="header-title">
+            <h1 class="text-2xl font-bold">Interactive</h1>
+            <h3 class="tracking-wide">Geometry Genius</h3>
+        </div>
+        <div id="header-blog">
+            <button onclick="window.location.href = 'blogs.html'" class="bg-blue-700 hover:bg-blue-500 text-white px-6 py-2 rounded">Blog</button>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- main section start -->
+    <main class="w-100 m-2 md:m-7 py-4">
+        <!-- calculation area start -->
+        <section id="main-container" class="grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-3">
+            <div id="calulate-container" class="col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- card one -->
+                <div id="card-one" onmouseenter="colorChanger(id)"
+                    class="card border-2 drop-shadow-sm rounded px-10 py-5 flex flex-col justify-center items-center gap-2">
+                    <div id="triangle-image" class="">
+                        <img src="images/triangle.png" alt="triangle" class="w-50 h-32">
+                    </div>
+                    <div class="text-center py-5">
+                        <h3 class="font-semibold text-2xl">Triangle</h3>
+                        <p>Area (A) = 0.5 <span class="align-[2px]">x</span> <span>b</span> <span
+                                class="align-[2px]">x</span> <span>h</span> </p>
+                        <p>b = <span id="triangle-value-one">?</span> cm h = <span id="triangle-value-two">?</span> cm
+                            <i id="one" class="btn-edit-open fa-regular  fa-pen-to-square"></i>
+                        </p>
+                    </div>
+                    <div class="flex justify-between gap-2 px-5">
+                        <div class="flex gap-1">
+                            <input type="number" name="base" id=""
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="b"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="flex gap-1">
+                            <input type="number" name="base" id=""
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="h"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="">
+                            <input id="" type="checkbox" value=""
+                                class="checkbox w-5 h-full text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <div class="w-full pt-5">
+                        <button id="calculate-triangle-area"
+                            class="bg-blue-700 rounded w-full text-white py-2">Calculate</button>
+                    </div>
+                </div>
+
+                <!-- card two -->
+                <div id="card-two" onmouseenter="colorChanger(id)"
+                    class="card border-2 drop-shadow-sm rounded px-10 py-5 flex flex-col justify-center items-center gap-2">
+                    <div id="rectangle-image" class="">
+                        <img src="images/rectangle.png" alt="rectangle" class="w-50 h-32">
+                    </div>
+                    <div class="text-center py-5">
+                        <h3 class="font-semibold text-2xl">Rectangle</h3>
+                        <p>Area (A) = <span>w</span> <span class="align-[1px]">x</span> <span>i</span> </p>
+                        <p>w = <span id="rectangle-value-one">?</span> cm i = <span id="rectangle-value-two">?</span> cm
+                            <i class="btn-edit-open fa-regular  fa-pen-to-square"></i> </p>
+                    </div>
+                    <div class="flex justify-between gap-2 px-5">
+                        <div class="flex gap-1">
+                            <input type="number" name="base"
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="width"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="flex gap-1">
+                            <input type="number" name="base"
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="height"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="">
+                            <input type="checkbox" value=""
+                                class="checkbox w-5 h-full text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <div class="w-full pt-5">
+                        <button id="calculate-rectangle-area"
+                            class="bg-blue-700  rounded w-full text-white py-2">Calculate</button>
+                    </div>
+                </div>
+
+                <!-- card three -->
+                <div id="card-three" onmouseenter="colorChanger(id)"
+                    class="card border-2 drop-shadow-sm rounded px-10 py-5 flex flex-col justify-center items-center gap-2">
+                    <div id="parallelogram-image" class="">
+                        <img src="images/parallelogram.png" alt="parallelogram" class="w-50 h-32">
+                    </div>
+                    <div class="text-center py-5">
+                        <h3 class="font-semibold text-2xl">Parallelogram</h3>
+                        <p>Area (A) = <span>b</span> <span class="align-[2px]">x</span> <span>h</span> </p>
+                        <p>b = <span id="parallelogram-value-one">?</span> cm h = <span
+                                id="parallelogram-value-two">?</span> cm <i
+                                class="btn-edit-open fa-regular  fa-pen-to-square"></i> </p>
+                    </div>
+                    <div class="flex justify-between gap-2 px-5">
+                        <div class="flex gap-1">
+                            <input type="number" name="base" id=""
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="base"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="flex gap-1">
+                            <input type="number" name="base" id=""
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="base"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="">
+                            <input id="" type="checkbox" value=""
+                                class="checkbox w-5 h-full text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <div class="w-full pt-5">
+                        <button id="calculate-parallelogram-area"
+                            class="bg-blue-700  rounded w-full text-white py-2">Calculate</button>
+                    </div>
+                </div>
+
+                <!-- card four -->
+                <div id="card-four" onmouseenter="colorChanger(id)"
+                    class="card border-2 drop-shadow-sm rounded px-10 py-5 flex flex-col justify-center items-center gap-2">
+                    <div id="rhombus-image" class="">
+                        <img src="images/rhombus.png" alt="rhombus" class="w-50 h-32">
+                    </div>
+                    <div class="text-center py-5">
+                        <h3 class="font-semibold text-2xl">Rhombus</h3>
+                        <p>Area (A) = 0.5 <span class="align-[2px]">x</span> <span>d<sub>1</sub></span> <span
+                                class="align-[2px]">x</span> <span>d<sub>2</sub></span> </p>
+                        <p><span>d<sub>1</sub></span> = <span id="rhombus-value-one">?</span> cm
+                            <span>d<sub>2</sub></span> = <span id="rhombus-value-two">?</span> cm
+                            <i class="btn-edit-open fa-regular fa-pen-to-square"></i>
+                        </p>
+                    </div>
+                    <div class="flex justify-between gap-2 px-5">
+                        <div class="flex gap-1">
+                            <input type="number" name="base" id=""
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="d1"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="flex gap-1">
+                            <input type="number" name="base" id=""
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="d2"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="">
+                            <input id="" type="checkbox" value=""
+                                class="checkbox w-5 h-full text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <div class="w-full pt-5">
+                        <button id="calculate-rhombus-area"
+                            class="bg-blue-700  rounded w-full text-white py-2">Calculate</button>
+                    </div>
+                </div>
+
+                <!-- card five -->
+                <div id="card-five" onmouseenter="colorChanger(id)"
+                    class="card border-2 drop-shadow-sm rounded px-10 py-5 flex flex-col justify-center items-center gap-2">
+                    <div id="pentagon-image" class="">
+                        <img src="images/pentagon.png" alt="pentagon" class="w-50 h-32">
+                    </div>
+                    <div class="text-center py-5">
+                        <h3 class="font-semibold text-2xl">Pentagon</h3>
+                        <p>Area (A) = 0.5 <span class="align-[2px]">x</span> <span>p</span> <span
+                                class="align-[2px]">x</span> <span>b<span> </p>
+                        <p>p = <span id="pentagon-value-one">?</span> cm b = <span id="pentagon-value-two">?</span> cm <i
+                                class="btn-edit-open fa-regular  fa-pen-to-square"></i> </p>
+                    </div>
+                    <div class="flex justify-between gap-2 px-5">
+                        <div class="flex gap-1">
+                            <input type="number" name="base" id=""
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="p"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="flex gap-1">
+                            <input type="number" name="base" id=""
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="b"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="">
+                            <input id="" type="checkbox" value=""
+                                class="checkbox w-5 h-full text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <div class="w-full pt-5">
+                        <button id="calculate-pentagon-area" class="bg-blue-700  rounded w-full text-white py-1">Calculate</button>
+                    </div>
+                </div>
+
+                <!-- card six -->
+                <div id="card-six" onmouseenter="colorChanger(id)"
+                    class="card border-2 drop-shadow-sm rounded px-10 py-5 flex flex-col justify-center items-center gap-2">
+                    <div id="ellipse-image" class="">
+                        <img src="images/ellipse.png" alt="ellipse" class="w-50 h-32">
+                    </div>
+                    <div class="text-center py-5">
+                        <h3 class="font-semibold text-2xl">Ellipse</h3>
+                        <p>Area (A) = &Pi; <span class="align-[2px]">x</span> <span>p</span> <span
+                                class="align-[2px]">x</span> <span>b<span> </p>
+                        <p>p = <span id="ellipse-value-one">?</span> cm b = <span id="ellipse-value-two">?</span> cm <i
+                                class="btn-edit-open fa-regular  fa-pen-to-square"></i> </p>
+                    </div>
+                    <div class="flex justify-between gap-2 px-5">
+                        <div class="flex gap-1">
+                            <input type="number" name="base" id=""
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="a"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="flex gap-1">
+                            <input type="number" name="base" id=""
+                                class="outline-0 rounded w-3/12 bg-slate-200 text-center flex-grow" placeholder="b"
+                                disabled>
+                            <p>cm</p>
+                        </div>
+                        <div class="">
+                            <input id="" type="checkbox" value=""
+                                class="checkbox w-5 h-full text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <div class="w-full pt-5">
+                        <button id="calculate-ellipse-area" class="bg-blue-700  rounded w-full text-white py-2">Calculate</button>
+                    </div>
+                </div>
+            </div>
+            <!-- calculation area end -->
+
+            <!-- calculated area result section start -->
+            <div id="area-calculation" class="border-2 drop-shadow-sm rounded w-full p-2 mt-5 md:mt-0">
+                <h1 id="area-calculation-title" class="text-center underline font-semibold text-1xl pb-5">Area
+                    Calculation</h1>
+                <div id="area-calculation-results" class="flex flex-col gap-2">
+                    <div class="area-calculation-result flex justify-between items-center">
+                        <!-- <p> <span>1</span>. <span>Triangle</span></p>
+                        <h1><span> </span></h1>
+                        <p class="flex-grow text-center"> <span>12</span>cm<sup>2</sup></p>
+                        <button class="btn-conversion bg-blue-700 hover:bg-blue-500 text-white p-2 rounded">Convert to
+                            m<sup>2</sup></button> -->
+                    </div>
+                </div>
+            </div>
+            <!-- calculated area result section end -->
+        </section>
+    </main>
+    <!-- main section end -->
+
+    <script src="js/common.js"></script>
+    <script src="js/value-edit.js"></script>
+    <script src="js/calculate.js"></script>
+</body>
+
+</html>
