@@ -4,13 +4,16 @@ let numberOfAreaCalculation = 0;
 // card one calculation
 document.getElementById('calculate-triangle-area').addEventListener('click', function (event) {
 
-   const muliplicationResult =  getValueAndMuliplication('triangle-value-one', 'triangle-value-two');
+    const multiplicationResult = getValueAndMultiplication('triangle-value-one', 'triangle-value-two', 'calculate-triangle-area');
+
+    // unchecked checkbox
+    makeCheckboxUncheckedandInputValuesEmpty('calculate-triangle-area');
 
     //get area
-    let areaInCM = muliplicationResult * 0.5;
-    areaInCM = parseFloat(areaInCM.toFixed(2));
-
-    if (muliplicationResult !== false) {
+    let areaInCM = multiplicationResult * 0.5;
+    
+    if (multiplicationResult !== false) {
+        areaInCM = parseFloat(areaInCM.toFixed(2));
         numberOfAreaCalculation++;
         const areaProperty = event.target.parentNode.parentNode.childNodes[3].childNodes[1].innerText;
         makeDivForAreaCalculation(numberOfAreaCalculation, areaProperty, areaInCM);
@@ -27,14 +30,17 @@ document.getElementById('calculate-triangle-area').addEventListener('click', fun
 
 // card two calculation
 document.getElementById('calculate-rectangle-area').addEventListener('click', function (event) {
-    
-    const muliplicationResult =  getValueAndMuliplication('rectangle-value-one', 'rectangle-value-two');
+
+    const multiplicationResult = getValueAndMultiplication('rectangle-value-one', 'rectangle-value-two', 'calculate-rectangle-area');
+
+    // unchecked checkbox
+    makeCheckboxUncheckedandInputValuesEmpty('calculate-rectangle-area');
 
     //get area
-    let areaInCM = muliplicationResult;
-    areaInCM = parseFloat(areaInCM.toFixed(2));
-
-    if (muliplicationResult !== false) {
+    let areaInCM = multiplicationResult;
+    
+    if (multiplicationResult !== false) {
+        areaInCM = parseFloat(areaInCM.toFixed(2));
         numberOfAreaCalculation++;
         const areaProperty = event.target.parentNode.parentNode.childNodes[3].childNodes[1].innerText;
         makeDivForAreaCalculation(numberOfAreaCalculation, areaProperty, areaInCM);
@@ -52,14 +58,17 @@ document.getElementById('calculate-rectangle-area').addEventListener('click', fu
 
 // card three calculation
 document.getElementById('calculate-parallelogram-area').addEventListener('click', function (event) {
-    
-    const muliplicationResult =  getValueAndMuliplication('parallelogram-value-one', 'parallelogram-value-two');
+
+    const multiplicationResult = getValueAndMultiplication('parallelogram-value-one', 'parallelogram-value-two', 'calculate-parallelogram-area');
+
+    // unchecked checkbox
+    makeCheckboxUncheckedandInputValuesEmpty('calculate-parallelogram-area');
 
     //get area
-    let areaInCM = muliplicationResult;
-    areaInCM = parseFloat(areaInCM.toFixed(2));
-
-    if (muliplicationResult !== false) {
+    let areaInCM = multiplicationResult;
+    
+    if (multiplicationResult !== false) {
+        areaInCM = parseFloat(areaInCM.toFixed(2));
         numberOfAreaCalculation++;
         const areaProperty = event.target.parentNode.parentNode.childNodes[3].childNodes[1].innerText;
         makeDivForAreaCalculation(numberOfAreaCalculation, areaProperty, areaInCM);
@@ -77,14 +86,17 @@ document.getElementById('calculate-parallelogram-area').addEventListener('click'
 
 // card four calculation
 document.getElementById('calculate-rhombus-area').addEventListener('click', function (event) {
-    
-    const muliplicationResult =  getValueAndMuliplication('rhombus-value-one', 'rhombus-value-two');
+
+    const multiplicationResult = getValueAndMultiplication('rhombus-value-one', 'rhombus-value-two', 'calculate-rhombus-area');
+
+    // unchecked checkbox
+    makeCheckboxUncheckedandInputValuesEmpty('calculate-rhombus-area');
 
     //get area
-    let areaInCM = muliplicationResult * 0.5;
-    areaInCM = parseFloat(areaInCM.toFixed(2));
-
-    if (muliplicationResult !== false) {
+    let areaInCM = multiplicationResult * 0.5;
+    
+    if (multiplicationResult !== false) {
+        areaInCM = parseFloat(areaInCM.toFixed(2));
         numberOfAreaCalculation++;
         const areaProperty = event.target.parentNode.parentNode.childNodes[3].childNodes[1].innerText;
         makeDivForAreaCalculation(numberOfAreaCalculation, areaProperty, areaInCM);
@@ -102,14 +114,18 @@ document.getElementById('calculate-rhombus-area').addEventListener('click', func
 
 // card five
 document.getElementById('calculate-pentagon-area').addEventListener('click', function (event) {
-    
-    const muliplicationResult =  getValueAndMuliplication('pentagon-value-one', 'pentagon-value-two');
+
+    const multiplicationResult = getValueAndMultiplication('pentagon-value-one', 'pentagon-value-two', 'calculate-pentagon-area');
+
+    // unchecked checkbox
+    makeCheckboxUncheckedandInputValuesEmpty('calculate-pentagon-area');
+
 
     //get area
-    let areaInCM = muliplicationResult * 0.5;
-    areaInCM = parseFloat(areaInCM.toFixed(2));
-
-    if (muliplicationResult !== false) {
+    let areaInCM = multiplicationResult * 0.5;
+    
+    if (multiplicationResult !== false) {
+        areaInCM = parseFloat(areaInCM.toFixed(2));
         numberOfAreaCalculation++;
         const areaProperty = event.target.parentNode.parentNode.childNodes[3].childNodes[1].innerText;
         makeDivForAreaCalculation(numberOfAreaCalculation, areaProperty, areaInCM);
@@ -127,14 +143,17 @@ document.getElementById('calculate-pentagon-area').addEventListener('click', fun
 
 // card six
 document.getElementById('calculate-ellipse-area').addEventListener('click', function (event) {
-    
-    const muliplicationResult =  getValueAndMuliplication('ellipse-value-one', 'ellipse-value-two');
+
+    const multiplicationResult = getValueAndMultiplication('ellipse-value-one', 'ellipse-value-two', 'calculate-ellipse-area');
+
+    // unchecked checkbox
+    makeCheckboxUncheckedandInputValuesEmpty('calculate-ellipse-area');
 
     //get area
-    let areaInCM = muliplicationResult * 3.1416;
-    areaInCM = parseFloat(areaInCM.toFixed(2));
-
-    if (muliplicationResult !== false) {
+    let areaInCM = multiplicationResult * 3.1416;
+    
+    if (multiplicationResult !== false) {
+        areaInCM = parseFloat(areaInCM.toFixed(2));
         numberOfAreaCalculation++;
         const areaProperty = event.target.parentNode.parentNode.childNodes[3].childNodes[1].innerText;
         makeDivForAreaCalculation(numberOfAreaCalculation, areaProperty, areaInCM);

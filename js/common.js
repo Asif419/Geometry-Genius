@@ -1,13 +1,13 @@
+//used in index html page
 function colorChanger(id) {
     const card = document.getElementById(id);
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
     card.style.backgroundColor = "#" + randomColor;
     // card.style.opacity = '0.9';
-    console.log(id);
 }
-
+//used in value-edit js file
 function getValuesFromElement(inputField) {
-    const inputFieldString = inputField.value
+    const inputFieldString = inputField.value;
     let inputFieldValue = parseFloat(inputFieldString);
     inputFieldValue = inputFieldValue.toFixed(2);
     return inputFieldValue;
@@ -25,24 +25,28 @@ function getValueFromElementById(elementId) {
     return elementValue;
 }
 
-function getValueAndMuliplication(idOne, idTwo) {
+// used in calcualte js file
+function getValueAndMultiplication(idOne, idTwo, idThree) {
     const valueOne = getValueFromElementById(idOne);
     const valueTwo = getValueFromElementById(idTwo);
-    const result = calculationButtonAbleOrDisabled(valueOne, valueTwo);
+    const btnCalculate = document.getElementById(idThree);
+    
+    const result = calculationButtonAbleOrDisabled(valueOne, valueTwo, btnCalculate);
     return result;
 }
 
-function calculationButtonAbleOrDisabled(valueOne, valueTwo) {
-    console.log(valueOne, valueTwo);
-    if (!isNaN(valueOne) == false || !isNaN(valueTwo) == false) {
-        // const one = document.getElementById(calculateButtonId).setAttribute('disabled', '');
-        alert("value is not corrent! Please check");
-        return false;
-    }
-    else {
-        // calculateButtonId.classList.add('bg-blue-800');
-        const result = valueOne * valueTwo;
-        return result;
+function makeCheckboxUncheckedandInputValuesEmpty(id) {
+    const elementString = document.getElementById(id);
+    const checkbox = elementString.parentNode.parentNode.childNodes[5].lastChild.previousSibling.childNodes[1];
+    checkbox.checked = false;
+    //making inbox field empty
+    inputFieldOne = elementString.parentNode.parentNode.childNodes[5].childNodes[1].childNodes[1];
+    inputFieldTwo = elementString.parentNode.parentNode.childNodes[5].childNodes[3].childNodes[1];
+    
+    //if both filed has number than replace with '' 
+    if (inputFieldOne.value !== '' && inputFieldTwo.value !== '') {
+        inputFieldOne.value = '';
+        inputFieldTwo.value = '';
     }
 }
 
@@ -86,7 +90,7 @@ function makeDivForAreaCalculation(numberOfAreaCalculation, areaProperty, area) 
 }
 
 function convertCMToM(btnConversionClass, areaInCM) {
-    btnConversionClass.addEventListener('click', function (event) {
+    btnConversionClass.childNodes[2].addEventListener('click', function (event) {
         const areaInM = parseFloat((areaInCM / 1000).toFixed(4));
         //changing values
         const replaceArea = event.target.parentNode.childNodes[1].childNodes[0];
@@ -97,6 +101,30 @@ function convertCMToM(btnConversionClass, areaInCM) {
         event.target.setAttribute('disabled', '');
     })
 }
+
+//used in this file
+function calculationButtonAbleOrDisabled(valueOne, valueTwo, btnCalculate) {
+
+    const btnCalculateValueOne = btnCalculate.parentNode.parentNode.childNodes[5].childNodes[1].childNodes[1].value;
+    const btnCalculateValueTwo = btnCalculate.parentNode.parentNode.childNodes[5].childNodes[3].childNodes[1].value;
+
+    if (btnCalculateValueOne == '' || btnCalculateValueTwo == '') {
+        alert('Empty field! Kindly write values');
+        return false;
+    }
+
+    if (!isNaN(valueOne) == false || !isNaN(valueTwo) == false) {
+        // const one = document.getElementById(calculateButtonId).setAttribute('disabled', '');
+        alert("Please click on checkbox and set 2 values");
+        return false;
+    }
+    else {
+        // calculateButtonId.classList.add('bg-blue-800');
+        const result = valueOne * valueTwo;
+        return result;
+    }
+}
+//tried to make another conversion
 /* 
 function convertMToCM (btnConversionClass, areaInM) {
     btnConversionClass.addEventListener('click', function (event) {

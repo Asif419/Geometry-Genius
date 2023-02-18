@@ -18,6 +18,20 @@ document.getElementById('calulate-container').addEventListener('click', function
         const inputFieldTwo = targetA.parentNode.parentNode.parentNode.childNodes[5].childNodes[3].childNodes[1];
         inputFieldTwo.removeAttribute('disabled');
 
+        //making values innertext ?
+        let valueOneInnerText = targetA.parentNode.childNodes[1];
+        let valueTwoInnerText = targetA.parentNode.childNodes[3];
+        valueOneInnerText.innerText = '?';
+        valueTwoInnerText.innerText = '?';
+        //making values innertext ? for rombus | as rombus has different html
+        const checkRombusOrNot = targetA.parentNode.parentNode.childNodes[1].innerText;
+        if(checkRombusOrNot == "Rhombus") {
+            valueOneInnerText = targetA.parentNode.childNodes[2];
+            valueTwoInnerText = targetA.parentNode.childNodes[6];
+            valueOneInnerText.innerText = '?';
+            valueTwoInnerText.innerText = '?';
+        } 
+
         //making checkbox unchecked
         const checkbox = targetA.parentNode.parentNode.parentNode.childNodes[5].childNodes[5].childNodes[1];
         checkbox.checked = false;
@@ -35,6 +49,7 @@ document.getElementById('calulate-container').addEventListener('click', function
             break;
         }
     }
+    
     //checkbox clicked
     if (checkB == true) {
         //tracing input field
@@ -48,23 +63,23 @@ document.getElementById('calulate-container').addEventListener('click', function
 
 
         //tracing the place where given values will set
-        //as Rombus has different html structure
         let inputFieldOneSetValue = targetB.parentNode.parentNode.parentNode.childNodes[3].childNodes[5].childNodes[1];
         let inputFieldTwoSetValue = targetB.parentNode.parentNode.parentNode.childNodes[3].childNodes[5].childNodes[3];
-
+        
+        //as Rombus has different html structure
         if (targetB.parentNode.parentNode.parentNode.childNodes[3].childNodes[1].innerText == 'Rhombus') {
-            console.log(1);
             inputFieldOneSetValue = targetB.parentNode.parentNode.parentNode.childNodes[3].childNodes[5].childNodes[2];
             inputFieldTwoSetValue = targetB.parentNode.parentNode.parentNode.childNodes[3].childNodes[5].childNodes[6];
+
         }
 
-
-        //checking given values
+        //checking given values in input field one
         if (inputFieldOneValue == 'NaN' || inputFieldOneValue <= 0) {
             //set given values as ?
             inputFieldOneSetValue.innerText = '?';
             makeCheckboxUncheckedAndSetNullValue(targetB, inputFieldOne);
         }
+        //checking given values in input field two
         else if (inputFieldTwoValue == 'NaN' || inputFieldTwoValue <= 0) {
             //set given values as ?
             inputFieldTwoSetValue.innerText = '?';

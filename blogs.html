@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en" data-theme="cupcake">
+
+</html>
 
 <head>
     <meta charset="UTF-8">
@@ -28,7 +31,59 @@
             <h3 class="tracking-wide">Geometry Genius</h3>
         </div>
         <div id="header-blog">
-            <button onclick="window.location.href = 'index.html'" class="bg-blue-700 hover:bg-blue-500 text-white px-3 py-2 rounded">Geometry Genius</button>
+            <button onclick="window.location.href = 'index.html'"
+                class="bg-blue-700 hover:bg-blue-500 text-white px-3 py-2 rounded">Geometry Genius</button>
         </div>
     </header>
     <!-- header end -->
+
+    <!-- main section start -->
+    <main class="m-2 md:m-7 grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="card bg-base-100 shadow-xl mb-3">
+            <div class="card-body">
+                <h2 class="card-title">1. What is DOM and what is the purpose of DOM?</h2>
+                <p>The full form of dom is ‘Document object Model’. And this is an interface of programming for web
+                    documents. Now there are many purposes of DOM. First of all, we can create, change or remove html
+                    elements through DOM. Furthermore, we can also modify elements of website’s any elements.</p>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl mb-3">
+            <div class="card-body">
+                <h2 class="card-title">2. How will you select HTML elements using DOM? Name the DOM methods</h2>
+                <p>Well there are five ways to select an element from website via DOM. <br>
+                    1. getElementsByTagName() <br>
+                    2. getElementsByClassName() <br>
+                    3. getElementById() <br>
+                    4. querySelector() <br>
+                    5. querySelectorAll() <br>
+                    All those selector are used most in DOM.
+                </p>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl mb-3">
+            <div class="card-body">
+                <h2 class="card-title">3. What is event bubble?</h2>
+                <p>Event bubbling is a concept od Document Object Model (DOM). When an element receive an event and that
+                    event transmitted to it’s parents elements in the tree of DOM till root element of targeted element.
+                    <br> To prevent this we can use stopPropagation(). this method stops event to travel to it’s parents
+                    element</p>
+            </div>
+        </div>
+        <div class="card bg-base-100 shadow-xl mb-3">
+            <div class="card-body">
+                <h2 class="card-title">4. What is a callback function and why will you use it?</h2>
+                <p>The simple definition of callback function is- ‘CallBack function is a function who can pass an
+                    argument of another function’. This function usually execute inside main function but main function
+                    normally decide when this function will execute. <br>
+                    For response of an event we can use callback function. Benefit of this function is we can wait for
+                    the previous function called.
+                </p>
+            </div>
+        </div>
+    </main>
+    <!-- main section end -->
+
+
+</body>
+
+</html>
